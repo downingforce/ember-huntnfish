@@ -1,0 +1,15 @@
+{{#each model as |post|}}
+  <div class="row" id="post-box">
+    {{#link-to 'post' post.id}}
+      <div class="col-sm-6">
+        <img src={{post.image}}>
+      </div>
+      <div class="col-sm-6">
+        <h3>{{post.title}}</h3>
+        <p>{{post.abstract}}</p>
+        <p id="author">By <strong>{{post.author}}</strong></p>
+        <p id="date">{{post.date}}</p>
+      </div>
+    {{/link-to}}
+  </div>
+{{/each}}

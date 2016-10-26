@@ -1,0 +1,12 @@
+<div class="row" id="post-box">
+  <div class="col-sm-6">
+    <img src={{model.image}}>
+  </div>
+  <div class="col-sm-6">
+    <h3>{{model.title}}</h3>
+    <p>{{model.content}}</p>
+    <p id="author">By <strong>{{model.author}}</strong></p>
+    <p id="date">{{model.date}}</p>
+  </div>
+  <button {{action 'editPost' model}}>Edit Post</button>
+</div>
