@@ -1,13 +1,22 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header" id="logo">
-      <a class="navbar-brand" href="#" href="/">HUNTN'FISH</a>
+<div class="ui fixed inverted menu">
+    <div class="ui container">
+      <a href="/" class="header item">
+        HUNTN'FISH
+      </a>
+      <a href="#" class="item">Home</a>
     </div>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="./posts/new">New Post</a></li>
-    </ul>
+    <div class="ui button nav navbar-nav navbar-right blue item" {{action 'toggleSidebar' 'sub-sidebar'}}>{{fa-icon "bars"}}</div>
+</div>
+
+<div class="ui pushable segment component context">
+  {{#ui-sidebar class="inverted menu right inline vertical" context=".component.context" id="sub-sidebar"}}
+    <span class="item">{{#link-to 'index'}}Home{{/link-to}}</span>
+    <span class="item">{{#link-to 'newpost'}}New Post{{/link-to}}</span>
+  {{/ui-sidebar}}
+  <div class="pusher">
+    <div class="ui basic segment" style="height: 100%;">
+
+      {{outlet}}
+    </div>
   </div>
-</nav>
-<div class="container">
-  {{outlet}}
 </div>

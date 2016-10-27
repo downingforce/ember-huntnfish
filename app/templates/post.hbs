@@ -1,23 +1,29 @@
 <div class="row" id="post-box">
-  <div class="col-sm-6">
-    <img src={{model.image}}>
+  <div>
+
+    <h1>{{model.title}}</h1>
+    <h4>{{model.date}}</h4>
+    <h4>By <strong>{{model.author}}</strong></h4>
+    <img class="post-image" src={{model.image}} align="right">
+    <p class="test">{{model.content}}</p>
+
+
   </div>
-  <div class="col-sm-6">
-    <h3>{{model.title}}</h3>
-    <p>{{model.content}}</p>
-    <p id="author">By <strong>{{model.author}}</strong></p>
-    <p id="date">{{model.date}}</p>
-  </div>
-  <button {{action 'editPost' model}}>Edit Post</button>
+  <button class="negative ui button" {{action 'editPost' model}}>Edit Post</button>
 </div>
 
-<h2>New Comment</h2>
-{{new-comment saveComment="saveComment" post=model}}
 
+
+
+<div class="ui segment comment">
+  {{new-comment saveComment="saveComment" post=model}}
+</div>
 <h2> Comments </h2>
-<ul>
-  {{#each model.comments as |comment|}}
-    <li>{{comment.url}} - {{comment.content}} - by {{comment.name}}</li>
-    <button {{action 'deleteComment' comment}}>Delete Comment</button>
-  {{/each}}
-</ul>
+{{#each model.comments as |comment|}}
+  <div class="ui segment comment">
+    <p>{{comment.url}}</p>
+    <p>{{comment.content}}</p>
+    <p>by {{comment.name}}</p>
+    <button class="negative ui button" {{action 'deleteComment' comment}}>Delete Comment</button>
+  </div>
+{{/each}}

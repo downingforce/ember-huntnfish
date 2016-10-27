@@ -1,46 +1,47 @@
-<div>
+<div class="ui form">
   <form>
-    <div class="form-group">
+    <div class="field">
       <label for="author">Author</label>
-      {{input value=author id="author" placeholder=post.author}}
+      {{input value=author id="author2" value=post.author}}
     </div>
 
-    <div class="form-group">
+    <div class="field">
       <label for="title">Title</label>
-      {{input value=title id="title" placeholder=post.title}}
+      {{input value=title id="title" value=post.title}}
     </div>
 
-    <div class="form-group">
+    <div class="field">
       <label for="content">Content</label>
-      {{input value=content id="content" placeholder=post.content}}
+      {{textarea value=content  id="content" value=post.content}}
     </div>
 
-    <div class="form-group">
+    <div class="field">
       <label for="date">Date</label>
-      {{input value=date id="date" placeholder=post.date}}
+      {{input value=date id="date2" value=post.date}}
     </div>
 
-    <div class="form-group">
+    <div class="field">
       <label for="tags">Tag</label>
-      {{input value=tags id="tags" placeholder=post.tags}}
+      {{input value=tags id="tags" value=post.tags}}
     </div>
 
-    <div class="form-group">
+    <div class="field">
       <label for="category">Category</label>
-      {{input value=category id="category" placeholder=post.category}}
+      {{input value=category id="category" value=post.category}}
     </div>
 
-    <div class="form-group">
+    <div class="field">
       <label for="image">Image URL</label>
-      {{input value=image id="image" placeholder=post.image}}
+      {{input value=image id="image" value=post.image}}
     </div>
 
-    <div class="form-group">
+    <div class="field">
       <label for="abstract">Post Abstract</label>
-      {{input value=abstract id="abstract" placeholder=post.abstract}}
+      {{input value=abstract id="abstract" value=post.abstract}}
     </div>
 
-    <button {{action 'edit' post}}>Save</button>
+    <button class="positive ui button" {{action 'edit' post}}>Save Post</button>
+    <button class="negative ui button" {{action 'delete' post}}>Delete Post</button>
   </form>
-  <button {{action 'delete' post}}>Delete Post</button>
+
 </div>
