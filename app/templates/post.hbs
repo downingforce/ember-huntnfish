@@ -13,11 +13,14 @@
 </div>
 
 
-
+<div class="ui segment comment">
+  {{new-tag saveTag="saveTag" post=model}}
+</div>
 
 <div class="ui segment comment">
   {{new-comment saveComment="saveComment" post=model}}
 </div>
+
 <h2> Comments </h2>
 {{#each model.comments as |comment|}}
   <div class="ui segment comment">

@@ -17,7 +17,15 @@ export default Ember.Route.extend({
         return post.save();
       });
     },
-
+    saveTag(params) {
+      console.log(params);
+      var newTag = this.store.createRecord('tag', params);
+      var post = params.post;
+      post.get('tags').addObject(newTag);
+      newTag.save().then(function() {
+        return post.save();
+      });
+    },
     deleteComment(comment) {
       if (confirm('Are you sure you want to delete this review?')) {
         comment.destroyRecord();
