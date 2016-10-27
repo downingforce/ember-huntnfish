@@ -1,0 +1,18 @@
+<h1>New Comment</h1>
+  <div>
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        {{input value=name id="name"}}
+      </div>
+      <div class="form-group">
+        <label for="url">url</label>
+        {{input value=url id="url"}}
+      </div>
+      <div class="form-group">
+        <label for="content">Content</label>
+        {{input value=content id="content"}}
+      </div>
+      <button {{action 'saveComment'}}>Save</button>
+    </form>
+  </div>

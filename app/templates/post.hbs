@@ -10,3 +10,14 @@
   </div>
   <button {{action 'editPost' model}}>Edit Post</button>
 </div>
+
+<h2>New Comment</h2>
+{{new-comment saveComment="saveComment" post=model}}
+
+<h2> Comments </h2>
+<ul>
+  {{#each model.comments as |comment|}}
+    <li>{{comment.url}} - {{comment.content}} - by {{comment.name}}</li>
+    <button {{action 'deleteComment' comment}}>Delete Comment</button>
+  {{/each}}
+</ul>
